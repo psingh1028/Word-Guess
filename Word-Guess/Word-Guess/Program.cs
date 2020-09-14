@@ -21,7 +21,9 @@ namespace WordGuess
             //    Console.WriteLine(phrases[i]);
             //}
 
-            Console.WriteLine(SelectPhrase(phrases));
+            //Console.WriteLine(SelectPhrase(phrases)); this will check to see if "SelectPhrases" method is returning a value from the list
+
+           Console.WriteLine(PlayGame(phrases));
 
 
             Console.ReadKey();
@@ -47,8 +49,14 @@ namespace WordGuess
             var random = new Random(); // creates an object of class Random called "random"
             var randomNumber = random.Next(0, 5); // sets variable "randomNumber" to a number selected by the random.Next method in class Random
 
-
             return Phrases[randomNumber];
+        }
+
+        public static String PlayGame(List<String> Phrases)
+        {
+           var phrase = SelectPhrase(Phrases);
+
+            return phrase;
         }
     }
 }
